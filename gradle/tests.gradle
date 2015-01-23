@@ -1,0 +1,33 @@
+project.afterEvaluate { project ->
+
+    project.tasks.withType(Test) { test ->
+
+        test.maxParallelForks = 8
+
+        // listen to events in the test execution lifecycle
+        test.beforeTest { descriptor ->
+            logger.lifecycle("Running " + descriptor)
+        }
+
+        // show standard out and standard error of the test JVM(s) on the console
+        test.testLogging.showStandardStreams = true
+
+        // set heap size for the test JVM(s)
+        test.minHeapSize = "128m"
+        test.maxHeapSize = "512m"
+
+        // set JVM arguments for the test JVM(s)
+        test.jvmArgs '-XX:MaxPermSize=256m'
+
+
+        test.afterTest { descriptor, result ->
+            def elapsedTime = (result.getEndTime() - result.getStartTime()) / 1000
+            logger.lifecycle("${result.getResultType().name()} -- $descriptor  (Time: ${elapsedTime} s)")
+        }
+
+        // listen to standard out and standard error of the test JVM(s)
+        test.onOutput { descriptor, event ->
+            logger.lifecycle("Test: " + descriptor + " produced standard out/err: " + event.message)
+        }
+    }
+}

@@ -1,0 +1,23 @@
+buildscript { apply from: file("$rootDir/gradle/buildScript.gradle"), to: buildscript }
+
+
+allprojects {
+    apply from: "$rootDir/gradle/repositories.gradle"
+    apply from: "$rootDir/gradle/dependencies.gradle"
+    apply plugin: 'idea'
+}
+
+subprojects {
+    apply from: "$rootDir/gradle/codeQuality.gradle"
+    apply from: "$rootDir/gradle/artifacts.gradle"
+    apply from: "$rootDir/gradle/tests.gradle"
+    task release(dependsOn: ['check', 'cobertura', 'sonarRunner', 'javadoc', 'publish'])
+    task releaseLocal(dependsOn: ['check', 'cobertura', 'publishToMavenLocal'])
+}
+
+
+
+task createWrapper(type: Wrapper) {
+    gradleVersion = "2.1"
+    distributionUrl ="http//services.gradle.org/distributions/gradle-2.1-all.zip"
+}

@@ -1,0 +1,79 @@
+ext {
+    versions = [:]
+    libs = [:]
+}
+
+versions += [
+
+        mavenWagonHttp      : "2.2",
+        kohlsCodingStandards: "2.0.15",
+        log4j               : "1.2.16",
+        slf4j               : "1.7.5",
+        commonsLang3        : "3.1",
+        guava               : "17.0",
+        orikaCore           : "1.4.4",
+        cxf                 : "2.6.1",
+        spring              : "3.1.4.RELEASE",
+        springIntegration   : "4.1.0.RELEASE",
+        customerhubCommons  : "1.0.23",
+        mdmClient           : "0.2.38",
+        loyaltyClient       : "0.2.1.8",
+        lookupClient        : "0.1.12",
+        mockito             : "1.9.5",
+        junit               : "4.11",
+        aspectJ             : "1.7.4",
+        hystrix             : "1.3.17",
+        hystrixStream       : "1.3.16",
+        blitz4j             : "1.31",
+        archaius            : "0.6.0"
+
+
+]
+
+libs += [
+        cobertura           : 'net.sourceforge.cobertura:cobertura:2.0.3',
+        mavenWagonHttp      : "org.apache.maven.wagon:wagon-http:$versions.mavenWagonHttp",
+        kohlsCodingStandards: "com.kohls.services:services-coding-standards:$versions.kohlsCodingStandards",
+        log4j               : "log4j:log4j:$versions.log4j",
+        slf4j               : "org.slf4j:slf4j-log4j12:$versions.slf4j",
+        commonsLang3        : "org.apache.commons:commons-lang3:$versions.commonsLang3",
+        springCore          : "org.springframework:spring-core:$versions.spring",
+        springContext       : "org.springframework:spring-context:$versions.spring",
+        springTest          : "org.springframework:spring-test:$versions.spring",
+        springWeb           : "org.springframework:spring-web:$versions.spring",
+        springMvc        : "org.springframework:spring-webmvc:$versions.spring",
+        springBean          : "org.springframework:spring-beans:$versions.spring",
+        springIntegration   : "org.springframework.integration:spring-integration-core:$versions.springIntegration",
+        springIntStream        : "org.springframework.integration:spring-integration-stream:$versions.springIntegration",
+        springIntFile       : "org.springframework.integration:spring-integration-file:$versions.springIntegration",
+
+        inject              : 'javax.inject:javax.inject:1',
+        guava               : "com.google.guava:guava:$versions.guava",
+        commonsCollection   : 'commons-collections:commons-collections:3.2.1',
+        orikaCore           : "ma.glasnost.orika:orika-core:$versions.orikaCore",
+        jaxws               : 'com.sun.xml.ws:jaxws-rt:2.1.4',
+
+        cfxFrontEnd         : "org.apache.cxf:cxf-rt-frontend-jaxws:$versions.cxf",
+        cxfCore             : "org.apache.cxf:cxf-rt-core:$versions.cxf",
+        cxfTransport        : "org.apache.cxf:cxf-rt-transports-http:$versions.cxf",
+        cxfDataBinding      : "org.apache.cxf:cxf-rt-databinding-aegis:$versions.cxf",
+        cxfJaxRS            : "org.apache.cxf:cxf-bundle-jaxrs:$versions.cxf",
+
+        /* For Junits */
+        mockito             : "org.mockito:mockito-all:$versions.mockito",
+
+        junit               : "junit:junit:$versions.junit",
+
+        aspectJ             : "org.aspectj:aspectjweaver:$versions.aspectJ",
+        aspectJTools        : "org.aspectj:aspectjtools:${versions.aspectJ}",
+        aspectJRT           : "org.aspectj:aspectjrt:${versions.aspectJ}",
+
+        hystrix             : "com.netflix.hystrix:hystrix-core:$versions.hystrix",
+        hystrixStream       : "com.netflix.hystrix:hystrix-metrics-event-stream:$versions.hystrixStream",
+        blitz4j             : "com.netflix.blitz4j:blitz4j:$versions.blitz4j",
+        archaius            : "com.netflix.archaius:archaius-core:$versions.archaius",
+        apacheHttpClient    : 'org.apache.httpcomponents:httpclient:4.3.5',
+        commonsIO           : 'commons-io:commons-io:2.4',
+        xmlUnit             : 'xmlunit:xmlunit:1.5',
+]
+

@@ -1,0 +1,20 @@
+/**
+ * The settings file gets executed during the initialization phase. A multiproject build must have a settings.gradle
+ * file in the root project of the multiproject hierarchy. It is required because in the settings file it is defined,
+ * which projects are taking part in the multi-project build. You will need to define all packages in for the project
+ * in this file.
+ */
+
+/** Name of the Project */
+rootProject.name='hystrix-demo'
+
+include "core"
+include "web"
+
+
+
+/** enforces all projects to be lowercase */
+rootProject.children.each {
+    it.name = it.name.toLowerCase()
+}
+

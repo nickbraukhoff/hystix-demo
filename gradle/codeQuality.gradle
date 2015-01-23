@@ -1,0 +1,80 @@
+apply plugin: "checkstyle"
+apply plugin: "findbugs"
+apply plugin: 'pmd'
+apply plugin: 'net.saliman.cobertura'
+apply plugin: 'sonar-runner'
+
+sonarRunner {
+    sonarProperties {
+        property "sonar.host.url", "http://l09052r9.tst.kohls.com:9000/"
+        property "sonar.jdbc.url", "jdbc:mysql://l09052r9.tst.kohls.com:3306/sonar"
+        property "sonar.jdbc.driverClassName", "com.mysql.jdbc.Driver"
+        property "sonar.jdbc.username", "sonar"
+        property "sonar.jdbc.password", "sonar"
+        property "sonar.cobertura.reportPath", file("$project.buildDir/reports/cobertura/coverage.xml")
+        property "sonar.profile", "Sonar way with Findbugs"
+    }
+}
+
+//configurations {
+//    codeStandards
+//}
+
+//dependencies {
+//    codeStandards(libs.foo) {
+//        exclude group: "xerces"
+//        exclude group: "xalan"
+//        exclude group: "org.apache", module: "log4j"
+//    }
+//}
+
+//task unjarCodingStandards(type: Copy, description: "Unzip and setup coding standards rules") {
+//    def codingJar = file(configurations.codeStandards.find { it.name.contains("services-coding-standards") })
+//    def outputDir = file("${buildDir}/codingstandards")
+//    from zipTree(codingJar) into outputDir
+//}
+
+checkstyle {
+    configFile = file("${buildDir}/codingstandards/checkstyle/checkstyle.xml")
+    ignoreFailures = true
+}
+checkstyleMain.source = "build/wsimport"
+
+checkstyleMain.excludes = []
+checkstyleTest.excludes = ['**/*']
+
+
+
+findbugs {
+    toolVersion = "2.0.1"
+    includeFilter = file("${buildDir}/codingstandards/findbugs/filter.xml")
+    effort = "max"
+    reportLevel = "high"
+    ignoreFailures = true
+}
+
+findbugsMain.excludes = []
+
+findbugsTest.excludes = []
+
+pmd {
+    toolVersion = "5.1.3"
+    ruleSets = ["java-basic", "java-braces"]
+    ignoreFailures = true
+}
+pmdMain.excludes = []
+pmdTest.excludes = ['**/*']
+
+cobertura {
+    coverageFormats = ['html', 'xml']
+    try {
+        coverageMergeDatafiles << file("$buildDir/cobertura/cobertura.ser")
+    } catch (Exception e) {
+    }
+}
+
+tasks.withType(Checkstyle) {
+//    it.dependsOn unjarCodingStandards
+}
+tasks.withType(FindBugs)
+tasks.withType(Pmd)
