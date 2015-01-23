@@ -4,17 +4,17 @@ apply plugin: 'pmd'
 apply plugin: 'net.saliman.cobertura'
 apply plugin: 'sonar-runner'
 
-sonarRunner {
-    sonarProperties {
-        property "sonar.host.url", "http://l09052r9.tst.kohls.com:9000/"
-        property "sonar.jdbc.url", "jdbc:mysql://l09052r9.tst.kohls.com:3306/sonar"
-        property "sonar.jdbc.driverClassName", "com.mysql.jdbc.Driver"
-        property "sonar.jdbc.username", "sonar"
-        property "sonar.jdbc.password", "sonar"
-        property "sonar.cobertura.reportPath", file("$project.buildDir/reports/cobertura/coverage.xml")
-        property "sonar.profile", "Sonar way with Findbugs"
-    }
-}
+//sonarRunner {
+//    sonarProperties {
+//        property "sonar.host.url", ""
+//        property "sonar.jdbc.url", "jdbc:mysql:"
+//        property "sonar.jdbc.driverClassName", "com.mysql.jdbc.Driver"
+//        property "sonar.jdbc.username", "sonar"
+//        property "sonar.jdbc.password", "sonar"
+//        property "sonar.cobertura.reportPath", file("$project.buildDir/reports/cobertura/coverage.xml")
+//        property "sonar.profile", "Sonar way with Findbugs"
+//    }
+//}
 
 //configurations {
 //    codeStandards

@@ -12,7 +12,7 @@ publishing {
                 username System.env.NEXUS_DEPLOY_USER
                 password System.env.NEXUS_DEPLOY_PASSWORD
             }
-            url = project.version.endsWith('-SNAPSHOT') ? repos.kohlsSnapshot : repos.kohlsRelease
+//            url = project.version.endsWith('-SNAPSHOT') ? repos.* : repos.*
         }
     }
 }
