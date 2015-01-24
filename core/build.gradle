@@ -3,5 +3,17 @@ apply plugin: 'java'
 sourceCompatibility = 1.6
 
 dependencies {
+  compile([
+          libs.slf4j,
+          libs.log4j,
+          libs.springCore,
+          libs.springContext,
+          libs.springWeb,
+          libs.springBean,
+          libs.springMvc,
+          libs.springWs,
+          libs.commonsLang3,
+          libs.jacksonDatabind,
+  ])
 
 }

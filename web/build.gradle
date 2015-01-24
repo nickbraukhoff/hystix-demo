@@ -1,7 +1,23 @@
+/** Since this module needs to be a .war artifact, the local type is priority over the global type which is defined
+ * in the build.gradle file at the root level.
+ */
 apply plugin: 'war'
+apply plugin: 'jetty'
 
-sourceCompatibility = 1.7
+/** Add the appropriate dependencies for this project here */
+dependencies{
 
-dependencies {
+    compile([
+            libs.springWeb,
+            libs.hystrix,
+            libs.hystrixStream
+    ])
 
+    /** Add which package(s) this package is dependent on and compile them  */
+    compile project(":core")
 }
+
+/** If the web direcotry is not named webapp, you need to specify the location of the web.xml file for gradle */
+//war {
+//    webXml = file('src/main/webapp/WEB-INF/web.xml') // copies a file to WEB-INF/web.xml
+//}

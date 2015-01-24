@@ -14,6 +14,9 @@ versions += [
         cxf                 : "2.6.1",
         spring              : "3.1.4.RELEASE",
         springIntegration   : "4.1.0.RELEASE",
+        springWs            : "2.2.0.RELEASE",
+        jacksonDatabind     : "2.3.0",
+
         customerhubCommons  : "1.0.23",
         mdmClient           : "0.2.38",
         loyaltyClient       : "0.2.1.8",
@@ -41,9 +44,11 @@ libs += [
         springWeb           : "org.springframework:spring-web:$versions.spring",
         springMvc        : "org.springframework:spring-webmvc:$versions.spring",
         springBean          : "org.springframework:spring-beans:$versions.spring",
-        springIntegration   : "org.springframework.integration:spring-integration-core:$versions.springIntegration",
-        springIntStream        : "org.springframework.integration:spring-integration-stream:$versions.springIntegration",
-        springIntFile       : "org.springframework.integration:spring-integration-file:$versions.springIntegration",
+        springWs            : "org.springframework.ws:spring-ws-core:$versions.springWs",
+        jacksonDatabind     : "com.fasterxml.jackson.core:jackson-databind:$versions.jacksonDatabind",
+
+
+
 
         inject              : 'javax.inject:javax.inject:1',
         guava               : "com.google.guava:guava:$versions.guava",
