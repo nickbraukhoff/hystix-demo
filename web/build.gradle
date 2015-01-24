@@ -3,29 +3,5 @@ apply plugin: 'war'
 sourceCompatibility = 1.7
 
 dependencies {
-    compile([libs.slf4j,
-             libs.log4j,
-             libs.hsqldb,
-             libs.springCore,
-             libs.springContext,
-             libs.springWeb,
-             libs.springBean,
-             libs.springWebMvc,
-             libs.commonsLang3,
-             libs.guava,
-             libs.springOxm,
-             libs.jacksonDatabind,
-             libs.springJdbc,
-             libs.commonsCollections4,
-             libs.hystrix,
-             libs.archaius,
-             libs.orikaCore,
-             libs.gson,
-             libs.jodaTime,
-    ])
-    testCompile([
-            libs.junit,
-            libs.mockito,
-            libs.springTest,
-    ])
+
 }
