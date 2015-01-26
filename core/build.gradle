@@ -1,7 +1,5 @@
 apply plugin: 'java'
 
-sourceCompatibility = 1.6
-
 dependencies {
   compile([
           libs.slf4j,
@@ -12,8 +10,14 @@ dependencies {
           libs.springBean,
           libs.springMvc,
           libs.springWs,
+          libs.springJdbc,
           libs.commonsLang3,
           libs.jacksonDatabind,
+          libs.guava,
+          libs.hsqldb,
+          libs.swapi,
+          libs.hystrix
+
   ])
 
 }

@@ -13,19 +13,27 @@
     <context:component-scan base-package="com.sandbox"/>
     <context:annotation-config/>
 
-    <!--<context:property-placeholder location="classpath:/sql.properties"/>-->
+    <context:property-placeholder location="classpath:/sql.properties"/>
 
-    <!--<bean id="namedParameterJdbcTemplate" class="org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate">-->
+    <bean id="namedParameterJdbcTemplate" class="org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate">
 
-        <!--<constructor-arg type="javax.sql.DataSource" ref="dataSource"/>-->
-    <!--</bean>-->
+        <constructor-arg type="javax.sql.DataSource" ref="dataSource"/>
+    </bean>
+
+    <bean class="org.springframework.web.client.RestTemplate">
+        <property name="errorHandler">
+            <bean class="com.sandbox.ws.MyResponseErrorHandler"/>
+        </property>
+    </bean>
+
+    <bean id="objectMapper" class="com.fasterxml.jackson.databind.ObjectMapper"/>
 
     <!-- Below configuration has been added to enable in memory DB HSQLDB  -->
-    <!--<jd:embedded-database id="dataSource" type="HSQL">-->
+    <jd:embedded-database id="dataSource" type="HSQL">
         <!--  <jd:script location="classpath:drop.sql"/> -->
-        <!--<jd:script location="classpath:schema.sql"/>-->
-        <!--<jd:script location="classpath:test-data.sql"/>-->
-    <!--</jd:embedded-database>-->
+        <jd:script location="classpath:schema.sql"/>
+        <jd:script location="classpath:data.sql"/>
+    </jd:embedded-database>
 
 
 </beans>

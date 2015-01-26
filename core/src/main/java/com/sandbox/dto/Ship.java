@@ -1,13 +1,10 @@
-package com.sandbox.view;
-
-import com.fasterxml.jackson.annotation.JsonAutoDetect;
+package com.sandbox.dto;
 
 /**
  * @author tkmay02
  * @since 1/24/15
  */
-@JsonAutoDetect
-public class ShipView {
+public class Ship {
     private String id;
     private String name;
     private String type;

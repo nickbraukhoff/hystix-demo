@@ -19,5 +19,5 @@ subprojects {
 
 task createWrapper(type: Wrapper) {
     gradleVersion = "2.1"
-    distributionUrl ="http://services.gradle.org/distributions/gradle-2.1-all.zip"
+    distributionUrl ="http://services.gradle.org/distributions/gradle-${gradleVersion}-all.zip"
 }
