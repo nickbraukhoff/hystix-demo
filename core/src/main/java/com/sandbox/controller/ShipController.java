@@ -21,26 +21,10 @@ public class ShipController {
     @Autowired
     ShipService shipService;
 
-    @Autowired
-    StarWarsService starWarsService;
-
     @RequestMapping(method = RequestMethod.GET, produces = {JSON_CONTENT_TYPE})
     @ResponseBody
     public List<ShipView> getShips() {
         return shipService.getShips();
-    }
-
-
-    @RequestMapping(value = "/{shipType}", method = RequestMethod.GET, produces = {JSON_CONTENT_TYPE})
-    @ResponseBody
-    public List<ShipView> getShipType(@PathVariable final String shipType) {
-        return shipService.getShipType(shipType);
-    }
-
-    @RequestMapping(value = "/pilot/{id}", method = RequestMethod.GET, produces = {JSON_CONTENT_TYPE})
-    @ResponseBody
-    public People getPilot(@PathVariable final String id) {
-        return starWarsService.getPerson(id);
     }
 
 }

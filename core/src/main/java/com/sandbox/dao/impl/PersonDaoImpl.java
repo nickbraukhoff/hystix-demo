@@ -4,6 +4,8 @@ import com.google.common.collect.Maps;
 import com.sandbox.dao.PersonDao;
 import com.sandbox.dto.Person;
 import com.sandbox.dto.PersonEntityMapper;
+import com.sandbox.service.command.GetAllPeopleCommand;
+import com.sandbox.service.command.GetByNameCommand;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;

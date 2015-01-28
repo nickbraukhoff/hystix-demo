@@ -9,6 +9,7 @@ import java.util.List;
  * @since 1/25/15
  */
 public interface PersonDao {
+
     List<Person> getPeople();
 
     List<Person> getPersonByName(final String name);

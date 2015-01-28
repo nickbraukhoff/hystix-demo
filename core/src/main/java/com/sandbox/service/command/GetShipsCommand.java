@@ -1,4 +1,4 @@
-package com.sandbox.service.impl;
+package com.sandbox.service.command;
 
 import com.netflix.hystrix.*;
 import com.sandbox.dao.ShipDao;

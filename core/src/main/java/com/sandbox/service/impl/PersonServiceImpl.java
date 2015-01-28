@@ -4,6 +4,9 @@ import com.google.common.collect.Lists;
 import com.sandbox.dao.PersonDao;
 import com.sandbox.dto.Person;
 import com.sandbox.service.PersonService;
+import com.sandbox.service.command.GetAllPeopleCommand;
+import com.sandbox.service.command.GetByNameCommand;
+import com.sandbox.service.command.GetByPersonIdCommand;
 import com.sandbox.view.PersonView;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -23,13 +26,14 @@ public class PersonServiceImpl implements PersonService{
     @Override
     public List<PersonView> getPeople() {
 
-        return mapListOfPeople(personDao.getPeople());
+        final List<Person> persons = new GetAllPeopleCommand(personDao, 300).execute();
+        return mapListOfPeople(persons);
     }
 
     @Override
     public PersonView getPersonByName(final String name) {
 
-        final List<Person> persons = personDao.getPersonByName(name);
+        final List<Person> persons = new GetByNameCommand(personDao, name, 300).execute();
 
         return mapSinglePersonView(persons.get(0));
     }
@@ -43,7 +47,7 @@ public class PersonServiceImpl implements PersonService{
 
     @Override
     public PersonView getPersonByID(final int id) {
-        final List<Person> persons = personDao.getPersonByID(id);
+        final List<Person> persons = new GetByPersonIdCommand(personDao, id, 300).execute();
 
         return mapSinglePersonView(persons.get(0));
     }
