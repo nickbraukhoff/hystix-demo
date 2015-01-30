@@ -4,6 +4,7 @@ import com.google.common.collect.Lists;
 import com.sandbox.dao.ShipDao;
 import com.sandbox.dto.Ship;
 import com.sandbox.service.ShipService;
+import com.sandbox.service.command.GetShipsCommand;
 import com.sandbox.view.ShipView;
 import com.swapi.models.People;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,10 +24,9 @@ public class ShipServiceImpl implements ShipService {
 
     @Override
     public List<ShipView> getShips() {
-        final List<Ship> ships = shipDao.getShips();
-        final List<ShipView> shipViews = assembleShipView(ships);
+        final List<Ship> ships = new GetShipsCommand(shipDao, 300).execute();
 
-        return shipViews;
+        return assembleShipView(ships);
     }
 
     @Override
