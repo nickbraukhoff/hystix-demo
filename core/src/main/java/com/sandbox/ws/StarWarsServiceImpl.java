@@ -10,7 +10,7 @@ import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestTemplate;
 
 /**
-* @author tkmay02
+* @author Nick Braukhoff
 * @since 1/15/15
 */
 @Component

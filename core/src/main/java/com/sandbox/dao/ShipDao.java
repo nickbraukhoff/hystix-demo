@@ -5,7 +5,7 @@ import com.sandbox.dto.Ship;
 import java.util.List;
 
 /**
- * @author tkmay02
+ * @author Nick Braukhoff
  * @since 1/24/15
  */
 public interface ShipDao {

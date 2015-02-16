@@ -3,7 +3,7 @@ package com.sandbox.ws;
 import com.swapi.models.People;
 
 /**
- * @author tkmay02
+ * @author Nick Braukhoff
  * @since 1/25/15
  */
 public interface StarWarsService {

@@ -1,7 +1,7 @@
 package com.sandbox.dto;
 
 /**
- * @author tkmay02
+ * @author Nick Braukhoff
  * @since 1/24/15
  */
 public class Ship {

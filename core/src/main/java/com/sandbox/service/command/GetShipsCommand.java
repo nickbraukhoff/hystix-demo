@@ -9,7 +9,7 @@ import com.sandbox.view.ShipView;
 import java.util.List;
 
 /**
- * @author tkmay02
+ * @author Nick Braukhoff
  * @since 1/25/15
  */
 public class GetShipsCommand extends HystrixCommand<List<Ship>> {

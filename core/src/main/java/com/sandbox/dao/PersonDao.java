@@ -5,7 +5,7 @@ import com.sandbox.dto.Person;
 import java.util.List;
 
 /**
- * @author tkmay02
+ * @author Nick Braukhoff
  * @since 1/25/15
  */
 public interface PersonDao {

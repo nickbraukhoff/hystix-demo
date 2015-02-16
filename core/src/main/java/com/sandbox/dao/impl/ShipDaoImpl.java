@@ -13,7 +13,7 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * @author tkmay02
+ * @author Nick Braukhoff
  * @since 1/24/15
  */
 @Component

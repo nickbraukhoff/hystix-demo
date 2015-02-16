@@ -3,7 +3,7 @@ package com.sandbox.ws;
 import org.springframework.http.HttpStatus;
 
 /**
- * @author tkmay02
+ * @author Nick Braukhoff
  * @since 1/15/15
  */
 public class RestUtil {

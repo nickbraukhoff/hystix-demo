@@ -6,7 +6,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 /**
- * @author tkmay02
+ * @author Nick Braukhoff
  * @since 1/24/15
  */
 public class ShipEntityMapper implements RowMapper<Ship> {

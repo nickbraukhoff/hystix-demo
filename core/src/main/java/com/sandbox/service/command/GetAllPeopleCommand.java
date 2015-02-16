@@ -8,7 +8,7 @@ import com.sandbox.dto.Person;
 import java.util.List;
 
 /**
- * @author tkmay02
+ * @author Nick Braukhoff
  * @since 1/27/15
  */
 public class GetAllPeopleCommand extends HystrixCommand<List<Person>> {

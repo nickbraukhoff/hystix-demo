@@ -1,7 +1,7 @@
 package com.sandbox.exception;
 
 /**
- * @author tkmay02
+ * @author Nick Braukhoff
  * @since 1/25/15
  */
 public class ServiceException extends RuntimeException {

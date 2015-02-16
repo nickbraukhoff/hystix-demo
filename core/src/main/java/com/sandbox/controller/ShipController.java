@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 /**
- * @author tkmay02
+ * @author Nick Braukhoff
  * @since 1/24/15
  */
 @RestController

@@ -1,7 +1,7 @@
 package com.sandbox.dto;
 
 /**
- * @author tkmay02
+ * @author Nick Braukhoff
  * @since 1/25/15
  */
 public class Person {

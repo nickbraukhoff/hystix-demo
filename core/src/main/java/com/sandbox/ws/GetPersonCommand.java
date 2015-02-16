@@ -14,7 +14,7 @@ import java.io.IOException;
 import java.util.List;
 
 /**
- * @author tkmay02
+ * @author Nick Braukhoff
  * @since 1/26/15
  */
 public class GetPersonCommand extends HystrixCommand<People> {

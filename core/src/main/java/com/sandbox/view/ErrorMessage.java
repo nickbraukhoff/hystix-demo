@@ -3,7 +3,7 @@ package com.sandbox.view;
 import com.fasterxml.jackson.annotation.JsonAutoDetect;
 
 /**
- * @author tkmay02
+ * @author Nick Braukhoff
  * @since 1/25/15
  */
 @JsonAutoDetect

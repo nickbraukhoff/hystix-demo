@@ -8,7 +8,7 @@ import org.springframework.web.client.ResponseErrorHandler;
 import java.io.IOException;
 
 /**
- * @author tkmay02
+ * @author Nick Braukhoff
  * @since 1/15/15
  */
 public class MyResponseErrorHandler implements ResponseErrorHandler {
